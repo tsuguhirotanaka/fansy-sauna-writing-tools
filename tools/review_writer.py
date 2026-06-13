@@ -40,7 +40,6 @@ def _build_prompt(site_info: str, ratings: dict, overall: int, memo: str, visit_
 
 
 def render():
-    st.header("サウナレビュー生成")
     st.caption("施設サイトのURLと評価を入力すると、リアルで参考になるレビュー文を生成します。")
 
     url = st.text_input("施設サイトURL", placeholder="https://example-sauna.com")

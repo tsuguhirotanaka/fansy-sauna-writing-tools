@@ -71,7 +71,6 @@ def _build_text_prompt(site_info: str, memo: str, platforms: list[str], visit_co
 
 
 def render():
-    st.header("SNS投稿文生成（サウナ特化）")
     st.caption("使用するSNSを選んで、施設サイトのURLを入力してください。")
 
     url = st.text_input("施設サイトURL", placeholder="https://example-sauna.com")
