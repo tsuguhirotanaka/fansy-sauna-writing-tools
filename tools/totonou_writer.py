@@ -24,7 +24,6 @@ def _build_prompt(site_info: str, memo: str, visit_context: str, length: int) ->
 
 
 def render():
-    st.header("ととのい体験記事")
     st.caption("施設サイトのURLを入力すると、臨場感あふれる体験記事を生成します。")
 
     url = st.text_input("施設サイトURL", placeholder="https://example-sauna.com")
