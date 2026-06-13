@@ -84,7 +84,7 @@ def render():
     selected = []
     for i, (name, info) in enumerate(PLATFORMS.items()):
         with cols[i]:
-            if st.checkbox(f"{info['icon']} {name}", value=(name != "Instagramストーリー"), key=f"sns_toggle_{name}"):
+            if st.checkbox(f"{info['icon']} {name}", value=False, key=f"sns_toggle_{name}"):
                 selected.append(name)
 
     disabled = not url.strip() or len(selected) == 0
