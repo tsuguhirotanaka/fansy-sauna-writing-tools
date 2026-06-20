@@ -62,5 +62,5 @@ try:
 except ValueError as e:
     st.error(str(e))
     st.info("サイドバーの「API設定」からGemini APIキーを入力するか、プロジェクトルートに `.env` ファイルを作成して `GEMINI_API_KEY=your_key` を設定してください。")
-except Exception as e:
-    st.error(f"エラーが発生しました: {e}")
+except Exception:
+    st.error("予期しないエラーが発生しました。しばらくしてから再試行してください。")
