@@ -88,7 +88,7 @@ def generate_illustration_prompt_from_image(image_url: str, memo: str, illust_st
     import requests as req
     from utils.url_fetcher import _validate_url
     _validate_url(image_url)
-    img_resp = req.get(image_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15, allow_redirects=False)
+    img_resp = req.get(image_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
     img_resp.raise_for_status()
     img_bytes = img_resp.content
     mime = img_resp.headers.get("Content-Type", "image/jpeg").split(";")[0].strip()

@@ -29,7 +29,7 @@ def _validate_url(url: str) -> None:
 
 def fetch_site_text(url: str) -> str:
     _validate_url(url)
-    resp = requests.get(url, headers=_HEADERS, timeout=10, allow_redirects=False)
+    resp = requests.get(url, headers=_HEADERS, timeout=10)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
     for tag in soup(["script", "style", "nav", "footer", "header", "aside"]):
@@ -55,7 +55,7 @@ _BROWSER_HEADERS = {
 
 def extract_image_urls(page_url: str, max_count: int = 12) -> list[str]:
     _validate_url(page_url)
-    resp = requests.get(page_url, headers=_BROWSER_HEADERS, timeout=15, allow_redirects=False)
+    resp = requests.get(page_url, headers=_BROWSER_HEADERS, timeout=15)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
